@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background-color: white;
+    font-size: 20px;
+    
+}
+
+.whole{
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    
+    background: linear-gradient( rgb(55, 123, 200), rgb(151, 67, 177));
+}
+.navbar{
+    display: block;
+}
+.navbar h2{
+    text-align: center;
+    padding-top: 20px;
+    
+    color: rgb(11, 11, 57);
+}
+
+/* -------------------------main------------------------------ */
+.main{
+    display: flex;
+    justify-content: center;
+}
+#cal , #res{
+    width: 50%;
+    height: 80px;
+    background-color: rgb(26, 24, 24);
+    color: rgb(171, 191, 208);
+    padding: 40px;
+    margin:  40px 10px;
+    font-size: 12px;
+
+}
+.calculation{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 75%;
+    border: 3px solid rgb(105, 78, 16);
+    padding: 10px;
+}
+.calculation button{
+    width: 24%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    background-color: rgb(215, 61, 108);
+    flex-wrap: wrap;
+}
