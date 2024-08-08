@@ -125,11 +125,18 @@ mathButtons.forEach((mathButton) =>{mathButton.addEventListener('click', () =>{
 //5. OperationX button activation
 operationsX.forEach((operationX) =>{
     operationX.addEventListener('click', ()=>{
-        opsVal = operationX.innerHTML;
         cleanAutomatically();
-        calArray.push(opsVal);
-        showOutput(calArray);
-        equalBtn();
+        opsVal = operationX.innerHTML;
+        if(calArray[calArray.length-1] ===''){
+            alert('Please enter any digit!')
+        }
+        else if( typeof calArray[calArray.length -1] === 'number'){
+            calArray.push(opsVal);
+            showOutput(calArray);
+            equalBtn();
+        }
+        
+        
     })
 })
 //6. OperationY button activation
@@ -351,6 +358,36 @@ let subParenthesesOperation = function (string){
         console.log(resultString);  
     }
     for (let i = 0; i < resultString.length; i++) {
+        if(resultString[i] === '(' && typeof resultString[i + 1] === 'number' && mathSigns.includes(resultString[i+2])){
+            newEmptyArr.push(resultString[i+1]);
+            console.log(newEmptyArr);
+            
+            for (let j = i+2; j < resultString.length; j++) {
+                if(resultString[j] !==')'){
+                    newEmptyArr.push(resultString[j]);
+                    
+                }
+                if(resultString[j] === ')'){
+                    let innerString = newEmptyArr.join('');
+                    console.log(innerString);
+                    let innerEquation = signReplace(innerString);
+                    let innerNumber = eval(innerEquation);
+                    console.log(innerNumber);
+                    console.log(newEmptyArr.length);
+                    resultString.splice(i+1, newEmptyArr.length -1);
+                    resultString[i+1] = innerNumber;
+                    newEmptyArr = [];
+                   
+                }
+                
+                
+                
+            }
+        }
+        console.log(resultString);  
+    }
+    
+    for (let i = 0; i < resultString.length; i++) {
         if(OpYSigns.includes(resultString[i]) && resultString[i+1]=='(' && typeof resultString[i+2] =='number'){
             let signChangedVal = instantSignChange(resultString[i]);
             emptyArr.push(signChangedVal, '(', resultString[i+2],')');
@@ -468,4 +505,3 @@ const instantSignChange = function(string) {
         .replace(/\blog\b/g, 'Math.log10')
         .replace(/\bln\b/g, 'Math.log')
 }
-//22. Set the Maximum limit of Array length
