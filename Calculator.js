@@ -79,6 +79,10 @@ const cleanAutomatically = function(){
         if(document.getElementById('bracket').disabled == true){
             document.getElementById('bracket').disabled = false;
         }
+        if(document.getElementById('point').disabled == true){
+            document.getElementById('point').disabled = false;
+        }
+
         openCount = 0;
         closeCount = 0;
 
