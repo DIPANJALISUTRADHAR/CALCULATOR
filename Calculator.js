@@ -70,10 +70,10 @@ let expValue = Number(Math.exp(1).toFixed(7));
 calInput.style.fontSize = '15px';
 calOutput.style.fontSize = '15px';
 const cleanAutomatically = function(){
-    if(calInput.value.trim() !== '' && calOutput.value.trim() !== ''){
+    if(calInput.value.trim() !== ' ' && calOutput.value.trim() !== ' '){
         calOutput.value = ' ';
         calArray = [];
-        oldArray = '';
+        oldArray = ' ';
         calInput.value = " ";
         clickCount = 0;
         if(document.getElementById('bracket').disabled == true){
