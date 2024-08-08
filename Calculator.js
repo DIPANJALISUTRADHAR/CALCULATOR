@@ -86,6 +86,7 @@ const cleanAutomatically = function(){
         openCount = 0;
         closeCount = 0;
 
+        
     }
     
 }
